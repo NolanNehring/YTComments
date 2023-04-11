@@ -23,7 +23,7 @@ def show_instructions():
 if st.button("How to upload a YouTube video into URL StreamLab"):
     show_instructions()
 st.sidebar.subheader('Youtube API Key')
-donut_theta = st.sidebar.selectbox('Enter Here', [1, 2, 3, 4, 5])
+donut_theta = st.sidebar.selectbox('Enter Here', ['q1','q2', 'q3'])
 
 st.sidebar.subheader('Line chart parameters')
 plot_data = st.sidebar.multiselect('Select data', ['temp_min', 'temp_max'], ['temp_min', 'temp_max'])
