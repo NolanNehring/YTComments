@@ -7,13 +7,23 @@ st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
     
-st.sidebar.header('Dashboard `version 2`')
+st.sidebar.header('Youtube Comment Anaylsis')
 
-st.sidebar.subheader('Heat map parameter')
+st.sidebar.subheader('')
 time_hist_color = st.sidebar.selectbox('Color by', ('temp_min', 'temp_max')) 
 
-st.sidebar.subheader('Donut chart parameter')
-donut_theta = st.sidebar.selectbox('Select data', ('q2', 'q3'))
+def show_instructions():
+    st.write("To upload a YouTube video into URL StreamLab, follow these steps:")
+    st.write("1. Go to the video you want to use in YouTube and copy the video URL.")
+    st.write("2. Open URL StreamLab and click on the 'Add URL' button.")
+    st.write("3. Paste the video URL into the 'Enter URL' field.")
+    st.write("4. Click the 'Add' button to add the video to your playlist.")
+    st.write("5. Your video should now appear in the URL StreamLab playlist.")
+
+if st.button("How to upload a YouTube video into URL StreamLab"):
+    show_instructions()
+st.sidebar.subheader('Youtube API Key')
+donut_theta = st.sidebar.selectbox('Enter Here')
 
 st.sidebar.subheader('Line chart parameters')
 plot_data = st.sidebar.multiselect('Select data', ['temp_min', 'temp_max'], ['temp_min', 'temp_max'])
