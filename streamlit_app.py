@@ -13,12 +13,7 @@ st.sidebar.subheader('')
 time_hist_color = st.sidebar.selectbox('Color by', ('temp_min', 'temp_max')) 
 
 def show_instructions():
-    st.write("To upload a YouTube video into URL StreamLab, follow these steps:")
-    st.write("1. Go to the video you want to use in YouTube and copy the video URL.")
-    st.write("2. Open URL StreamLab and click on the 'Add URL' button.")
-    st.write("3. Paste the video URL into the 'Enter URL' field.")
-    st.write("4. Click the 'Add' button to add the video to your playlist.")
-    st.write("5. Your video should now appear in the URL StreamLab playlist.")
+   st.sidebar.write("To upload a YouTube video into URL StreamLab, copy the video URL and paste it into the 'Enter URL' field in URL StreamLab. Then, click the 'Add' button to add the video to your playlist.")
 
 if st.button("How to upload a YouTube video into URL StreamLab"):
     show_instructions()
