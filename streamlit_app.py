@@ -15,9 +15,13 @@ time_hist_color = st.sidebar.selectbox('Color by', ('temp_min', 'temp_max'))
 def show_instructions():
    st.sidebar.write("To upload a YouTube video into URL StreamLab, copy the video URL and paste it into the 'Enter URL' field in URL StreamLab. Then, click the 'Add' button to add the video to your playlist.")
 
-if st.sidebar.button("How to upload a YouTube video into URL StreamLab"):
-    instructions_container = st.empty()
+clicked = st.sidebar.button("How to upload a YouTube video into URL StreamLab")
+
+# If the button is clicked, show the instructions
+if clicked:
+    instructions_container = st.sidebar.empty()
     show_instructions()
+else:
     instructions_container.empty()
 
 st.sidebar.subheader('Youtube API Key')
