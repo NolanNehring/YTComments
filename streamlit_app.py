@@ -15,10 +15,14 @@ time_hist_color = st.sidebar.selectbox('Color by', ('temp_min', 'temp_max'))
 def show_instructions():
    st.sidebar.write("To upload a YouTube video into URL StreamLab, copy the video URL and paste it into the 'Enter URL' field in URL StreamLab. Then, click the 'Add' button to add the video to your playlist.")
 
-clicked = st.sidebar.button("How to upload a YouTube video into URL StreamLab")
+show_instructions_flag = False
 
-# If the button is clicked, show the instructions
-if clicked:
+# Define the button and its behavior
+if st.sidebar.button("URL Help"):
+    show_instructions_flag = not show_instructions_flag
+
+# Show or hide the instructions based on the flag
+if show_instructions_flag:
     instructions_container = st.sidebar.empty()
     show_instructions()
 else:
