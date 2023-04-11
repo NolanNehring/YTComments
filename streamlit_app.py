@@ -16,7 +16,10 @@ def show_instructions():
    st.sidebar.write("To upload a YouTube video into URL StreamLab, copy the video URL and paste it into the 'Enter URL' field in URL StreamLab. Then, click the 'Add' button to add the video to your playlist.")
 
 if st.sidebar.button("How to upload a YouTube video into URL StreamLab"):
+     instructions_container = st.empty()
     show_instructions()
+    instructions_container.empty()
+
 st.sidebar.subheader('Youtube API Key')
 donut_theta = st.sidebar.selectbox('Enter Here', ['q1','q2', 'q3'])
 
