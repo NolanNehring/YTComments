@@ -18,15 +18,17 @@ def show_instructions():
 show_instructions_flag = False
 
 # Define the button and its behavior
+show_instructions_flag = False
+instructions_container = None
+
+# Define the button and its behavior
 if st.sidebar.button("URL Help"):
     show_instructions_flag = not show_instructions_flag
-
-# Show or hide the instructions based on the flag
-if show_instructions_flag:
-    instructions_container = st.sidebar.empty()
-    show_instructions()
-else:
-    instructions_container.empty()
+    if show_instructions_flag:
+        instructions_container = st.sidebar.empty()
+        show_instructions()
+    elif instructions_container:
+        instructions_container.empty()
 
 st.sidebar.subheader('Youtube API Key')
 donut_theta = st.sidebar.selectbox('Enter Here', ['q1','q2', 'q3'])
