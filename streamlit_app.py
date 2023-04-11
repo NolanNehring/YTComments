@@ -21,8 +21,7 @@ plot_height = st.sidebar.slider('Specify plot height', 200, 500, 250)
 
 st.sidebar.markdown('''
 ---
-Created w by [Data Professor](https://youtube.com/dataprofessor/).
-''')
+Created by Nolan Nehring''')
 
 
 # Row A
