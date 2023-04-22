@@ -7,31 +7,13 @@ st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
     
-st.sidebar.header('Youtube Comment Anaylsis')
+st.sidebar.header('Dashboard `version 2`')
 
-st.sidebar.subheader('')
+st.sidebar.subheader('Heat map parameter')
 time_hist_color = st.sidebar.selectbox('Color by', ('temp_min', 'temp_max')) 
 
-def show_instructions():
-   st.sidebar.write("To upload a YouTube video into URL StreamLab, copy the video URL and paste it into the 'Enter URL' field in URL StreamLab. Then, click the 'Add' button to add the video to your playlist.")
-
-show_instructions_flag = False
-
-# Define the button and its behavior
-show_instructions_flag = False
-instructions_container = None
-
-# Define the button and its behavior
-if st.sidebar.button("URL Help"):
-    show_instructions_flag = not show_instructions_flag
-    if show_instructions_flag:
-        instructions_container = st.sidebar.empty()
-        show_instructions()
-    elif instructions_container:
-        instructions_container.empty()
-
-st.sidebar.subheader('Youtube API Key')
-donut_theta = st.sidebar.selectbox('Enter Here', ['q1','q2', 'q3'])
+st.sidebar.subheader('Donut chart parameter')
+donut_theta = st.sidebar.selectbox('Select data', ('q2', 'q3'))
 
 st.sidebar.subheader('Line chart parameters')
 plot_data = st.sidebar.multiselect('Select data', ['temp_min', 'temp_max'], ['temp_min', 'temp_max'])
@@ -39,7 +21,8 @@ plot_height = st.sidebar.slider('Specify plot height', 200, 500, 250)
 
 st.sidebar.markdown('''
 ---
-Created by Nolan Nehring''')
+Created with ❤️ by [Data Professor](https://youtube.com/dataprofessor/).
+''')
 
 
 # Row A
