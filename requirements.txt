@@ -4,8 +4,9 @@ nltk
 matplotlib
 pandas
 streamlit
-yt-public
 wordcloud
 altair
 plotly
 vaderSentiment
+html
+webbrowser
