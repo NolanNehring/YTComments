@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import nltk
 import re
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.stem.snowball import SnowballStemmer
@@ -12,7 +12,7 @@ from slangs.slangs import slangs_dict
 from stopwords.stopwords import stop_words_list
 from emoticons.emo import emo
 
-
+nltk.download('stopwords')
 sb_stem = SnowballStemmer("english", ignore_stopwords=True)
 pt_stem = PorterStemmer()
 
