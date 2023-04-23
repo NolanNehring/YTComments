@@ -27,8 +27,7 @@ css_filename = os.path.join(dirname, 'style.css')
 nltk.download('punkt')
 nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
-# streamlit run streamlit_app.py
-#cd C:\Users\Nolan Nehring\Documents\YTComments-main
+
 df = None
 stemmer = PorterStemmer()
 st.sidebar.header('Youtube Comment Anaylsis')
