@@ -1,8 +1,6 @@
-import os
-from dotenv import load_dotenv
+
 from googleapiclient.discovery import build
 from utils.comments import process_comments, make_csv
-import csv
 
 def comment_threads(videoID, youtube, video_title):
     comments_list = []
