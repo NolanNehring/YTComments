@@ -1,3 +1,11 @@
-streamlit
+dotenv
+google-api-python-client
+nltk
+matplotlib
 pandas
-plost
+streamlit
+yt-public
+wordcloud
+altair
+plotly
+vaderSentiment
