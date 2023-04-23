@@ -8,5 +8,4 @@ wordcloud
 altair
 plotly
 vaderSentiment
-html
 webbrowser
