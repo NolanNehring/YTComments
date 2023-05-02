@@ -160,6 +160,7 @@ def plot_timeline(df):
     return fig
 # Define a function that opens the URL in a new tab
 def open_url_in_new_tab(url):
+    print(url)
     js = f"window.open('{url}')"  # Construct the JavaScript code
     html = f"<script>{js}</script>"  # Wrap the JavaScript code in an HTML tag
     st.write(html, unsafe_allow_html=True)  # Write the HTML to the Streamlit app
@@ -304,9 +305,9 @@ def Overall_display_dashboard(df,avg_overall_sentiment):
                 button_url = f"https://www.youtube.com/watch?v={video_id}&lc={comment_id}"
                 button_key = f"addition_comment_{i}"
                 st.write(f"{author_name}: {comment}")
-                print(button_url)
+                
                 st.button(button_label, key=button_key, on_click=lambda url=button_url: open_url_in_new_tab(url))
-                print(button_url)
+                
                 st.write('---')
     else:
         st.write('No comments to show')
