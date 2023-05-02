@@ -15,7 +15,7 @@ import html
 import webbrowser
 import plotly.graph_objs as go
 import base64
-import clipboard
+import pyperclip
 st.set_page_config(page_title="Youtube Comment Analysis", page_icon=":chart_with_upwards_trend:", layout="wide", initial_sidebar_state="expanded")
 
 if os.path.exists("style.css"):
@@ -243,7 +243,7 @@ def display_comments(df, column_name, column_title, video_id):
                 
                 # Display the comment and the button
                 st.write(f"{author_name}: {comment}")
-                st.button(button_url, key=button_key, on_click=lambda url=button_url: clipboard.copy(url))
+                st.button(button_url, key=button_key, on_click=lambda url=button_url: pyperclip.copy(url))
                 
                 # Add a horizontal line to separate comments
                 st.write('---')
