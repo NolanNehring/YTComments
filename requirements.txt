@@ -7,4 +7,3 @@ wordcloud
 altair
 plotly
 vaderSentiment
-webbrowser

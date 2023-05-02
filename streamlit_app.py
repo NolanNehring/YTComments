@@ -158,6 +158,11 @@ def plot_timeline(df):
     fig.update_layout(title='Sentiment Categories Over Time', xaxis_title='Week', yaxis_title='Count')
 
     return fig
+# Define a function that opens the URL in a new tab
+def open_url_in_new_tab(url):
+    js = f"window.open('{url}')"  # Construct the JavaScript code
+    html = f"<script>{js}</script>"  # Wrap the JavaScript code in an HTML tag
+    st.write(html, unsafe_allow_html=True)  # Write the HTML to the Streamlit app
 
 def preprocess_text(text):
     # Define a function to remove the plural 's' from the end of a word
@@ -237,7 +242,7 @@ def display_comments(df, column_name, column_title, video_id):
                 
                 # Display the comment and the button
                 st.write(f"{author_name}: {comment}")
-                st.button(button_label, key=button_key, on_click=lambda url=button_url: webbrowser.open_new_tab(url))
+                st.button(button_label, key=button_key, on_click=lambda url=button_url: open_url_in_new_tab(url))
                 
                 # Add a horizontal line to separate comments
                 st.write('---')
@@ -299,7 +304,7 @@ def Overall_display_dashboard(df,avg_overall_sentiment):
                 button_url = f"https://www.youtube.com/watch?v={video_id}&lc={comment_id}"
                 button_key = f"addition_comment_{i}"
                 st.write(f"{author_name}: {comment}")
-                st.button(button_label, key=button_key, on_click=lambda url=button_url: webbrowser.open_new_tab(url))
+                st.button(button_label, key=button_key, on_click=lambda url=button_url: open_url_in_new_tab(url))
                 st.write('---')
     else:
         st.write('No comments to show')
@@ -318,7 +323,7 @@ def Overall_display_dashboard(df,avg_overall_sentiment):
                 button_url = f"https://www.youtube.com/watch?v={video_id}&lc={comment_id}"
                 button_key = f"subtraction_comment_{i}"
                 st.write(f"{author_name}: {comment}")
-                st.button(button_label, key=button_key, on_click=lambda url=button_url: webbrowser.open_new_tab(url))
+                st.button(button_label, key=button_key, on_click=lambda url=button_url: open_url_in_new_tab(url))
                 st.write('---')
     else:
         st.write('No comments to show')
@@ -337,7 +342,7 @@ def Overall_display_dashboard(df,avg_overall_sentiment):
                 button_url = f"https://www.youtube.com/watch?v={video_id}&lc={comment_id}"
                 button_key = f"question_comment_{i}"
                 st.write(f"{author_name}: {comment}")
-                st.button(button_label, key=button_key, on_click=lambda url=button_url: webbrowser.open_new_tab(url))
+                st.button(button_label, key=button_key, on_click=lambda url=button_url: open_url_in_new_tab(url))
                 st.write('---')
     else:
         st.write('No comments to show')
