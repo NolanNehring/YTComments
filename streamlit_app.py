@@ -304,6 +304,7 @@ def Overall_display_dashboard(df,avg_overall_sentiment):
                 button_url = f"https://www.youtube.com/watch?v={video_id}&lc={comment_id}"
                 button_key = f"addition_comment_{i}"
                 st.write(f"{author_name}: {comment}")
+                print(button_url)
                 st.button(button_label, key=button_key, on_click=lambda url=button_url: open_url_in_new_tab(url))
                 print(button_url)
                 st.write('---')
