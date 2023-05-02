@@ -7,3 +7,4 @@ wordcloud
 altair
 plotly
 vaderSentiment
+clipboard
