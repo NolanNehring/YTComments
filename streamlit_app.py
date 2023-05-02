@@ -305,7 +305,7 @@ def Overall_display_dashboard(df,avg_overall_sentiment):
                 button_key = f"addition_comment_{i}"
                 st.write(f"{author_name}: {comment}")
                 st.button(button_label, key=button_key, on_click=lambda url=button_url: open_url_in_new_tab(url))
-                print(url)
+                print(button_url)
                 st.write('---')
     else:
         st.write('No comments to show')
