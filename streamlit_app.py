@@ -241,7 +241,8 @@ def display_comments(df, column_name, column_title, video_id):
                 button_key = f"{column_name}_comment_{comment_id}_{video_id}"
                 
                 # Display the comment and the button
-                show_message = st.checkbox("Show message")
+                show_message = st.checkbox("Show message", key=button_key)
+
                 st.write(f"{author_name}: {comment}")
                 if show_message:
                     st.write(button_url)
@@ -305,7 +306,8 @@ def Overall_display_dashboard(df,avg_overall_sentiment):
                 button_label = "View on YouTube"
                 button_url = f"https://www.youtube.com/watch?v={video_id}&lc={comment_id}"
                 button_key = f"addition_comment_{i}"
-                show_message = st.checkbox("Show message")
+                show_message = st.checkbox("Show message", key=button_key)
+
                 st.write(f"{author_name}: {comment}")
                 if show_message:
                     st.write(button_url)
@@ -326,7 +328,8 @@ def Overall_display_dashboard(df,avg_overall_sentiment):
                 button_label = "View on YouTube"
                 button_url = f"https://www.youtube.com/watch?v={video_id}&lc={comment_id}"
                 button_key = f"subtraction_comment_{i}"
-                show_message = st.checkbox("Show message")
+                show_message = st.checkbox("Show message", key=button_key)
+
                 st.write(f"{author_name}: {comment}")
                 if show_message:
                     st.write(button_url)
@@ -347,7 +350,8 @@ def Overall_display_dashboard(df,avg_overall_sentiment):
                 button_label = "View on YouTube"
                 button_url = f"https://www.youtube.com/watch?v={video_id}&lc={comment_id}"
                 button_key = f"question_comment_{i}"
-                show_message = st.checkbox("Show message")
+                show_message = st.checkbox("Show message", key=button_key)
+
                 st.write(f"{author_name}: {comment}")
                 if show_message:
                     st.write(button_url)
