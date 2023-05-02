@@ -14,7 +14,7 @@ import os
 import html
 import plotly.graph_objs as go
 import base64
-from bokeh.models.widgets import Div
+
 st.set_page_config(page_title="Youtube Comment Analysis", page_icon=":chart_with_upwards_trend:", layout="wide", initial_sidebar_state="expanded")
 
 if os.path.exists("style.css"):
@@ -241,8 +241,10 @@ def display_comments(df, column_name, column_title, video_id):
                 button_key = f"{column_name}_comment_{comment_id}_{video_id}"
                 
                 # Display the comment and the button
+                show_message = st.checkbox("Show message")
                 st.write(f"{author_name}: {comment}")
-                st.write(button_url)
+                if show_message:
+                    st.write(button_url)
                 
                 # Add a horizontal line to separate comments
                 st.write('---')
@@ -303,10 +305,10 @@ def Overall_display_dashboard(df,avg_overall_sentiment):
                 button_label = "View on YouTube"
                 button_url = f"https://www.youtube.com/watch?v={video_id}&lc={comment_id}"
                 button_key = f"addition_comment_{i}"
+                show_message = st.checkbox("Show message")
                 st.write(f"{author_name}: {comment}")
-                
-                st.button(button_label, key=button_key, on_click=lambda url=button_url: open_url_in_new_tab(url))
-                
+                if show_message:
+                    st.write(button_url)
                 st.write('---')
     else:
         st.write('No comments to show')
@@ -324,8 +326,10 @@ def Overall_display_dashboard(df,avg_overall_sentiment):
                 button_label = "View on YouTube"
                 button_url = f"https://www.youtube.com/watch?v={video_id}&lc={comment_id}"
                 button_key = f"subtraction_comment_{i}"
+                show_message = st.checkbox("Show message")
                 st.write(f"{author_name}: {comment}")
-                st.button(button_label, key=button_key, on_click=lambda url=button_url: open_url_in_new_tab(url))
+                if show_message:
+                    st.write(button_url)
                 st.write('---')
     else:
         st.write('No comments to show')
@@ -343,8 +347,10 @@ def Overall_display_dashboard(df,avg_overall_sentiment):
                 button_label = "View on YouTube"
                 button_url = f"https://www.youtube.com/watch?v={video_id}&lc={comment_id}"
                 button_key = f"question_comment_{i}"
+                show_message = st.checkbox("Show message")
                 st.write(f"{author_name}: {comment}")
-                st.button(button_label, key=button_key, on_click=lambda url=button_url: open_url_in_new_tab(url))
+                if show_message:
+                    st.write(button_url)
                 st.write('---')
     else:
         st.write('No comments to show')
